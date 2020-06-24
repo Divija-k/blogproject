@@ -1,0 +1,31 @@
+<div class="container-fluid">
+<div class="row">
+<div class="container-fluid move" style="text-align: center;">
+<div class="row">
+    <div class="col">
+        <img src="./assets/Blogimg.jpg" alt="Blog Image" class="img-fluid wm-50">
+</div>
+</div>
+</div>
+<br> <br>
+<div class="container-fluid" style="text-align: center;">
+  <div class="row" *ngIf="Blogs.length>0">
+    <div *ngFor="let Blog of Blogs" class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card text-center move">
+        <div class="card-header">
+          {{Blog.title|uppercase}}
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{Blog.description}}</p>
+        </div>
+        <div class="card-footer text-muted">
+          <p class="card-title">Written by {{Blog.author}}</p>
+          <p>Created On {{Blog.created|date}} and Last Modified on {{Blog.lastModified|date}}</p>
+          <a class="card-link btn btn-primary" [routerLink]="['/view',Blog.blogId]" >Read the blog</a>
+        </div>
+      </div >
+    </div>
+    </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,14 @@
+.patch{
+    padding: 20px;
+    border: black;
+    background-color: burlywood;
+}
+.d{
+ text-decoration-style: solid;
+}
+.ng-valid[required], .ng-valid.required {
+    border-left: 5px solid green;
+}
+.ng-invalid:not(form){
+    border-left: 5px solid red;
+}

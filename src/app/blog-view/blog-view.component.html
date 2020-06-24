@@ -1,0 +1,29 @@
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 col-lg-12 col-sm-12" *ngIf="Blog">
+<div class="bt">
+    {{Blog.title}}
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" *ngIf="Blog">
+        <div [innerHtml]=Blog.bodyHtml></div>
+        <hr>
+        <h5>Written by {{Blog.author|uppercase}}}</h5>    
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+           <a class="btn btn-warning"[routerLink]="['/edit',Blog.blogId]">Edit</a>
+           <div class="col-md-4">
+          <a class="btn btn-danger" (click)="delete()">Delete</a>
+           </div>
+           <div class="col-md-4">
+          <a class="btn btn-secondary">Go Back</a></div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>

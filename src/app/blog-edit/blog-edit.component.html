@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="patch" style="text-align: center;">EDIT YOUR BLOG</p>
+        <form #i="ngForm"  (ngSubmit)="editBlog()">
+          <div class="form-group">
+              <label for="title" class="d">Blog Title</label>
+              <input type="text" class="form-control" id="title" name="blogtitle" [(ngModel)]="Blog.blogtitle" placeholder="Enter the title of your Blog" required>
+          </div>
+          <div class="form-group">
+              <label for="dsc" class="d">Blog Description</label>
+              <textarea class="form-control" id="dsc" placeholder="Enter brief Description of your Blog" name="blogdes" [(ngModel)]="Blog.blogdes" required></textarea>
+          </div>
+          <div class="form-group">
+              <label for="blogbody" class="d">Blog Body</label>
+              <textarea class="form-control" id="blogbody" placeholder="Enter your Blog content" name="blogbody" [(ngModel)]="Blog.blogbody"required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Choose a Category</label>
+            <select class="form-control" name="category" [(ngModel)]="Blog.category" id="exampleFormControlSelect1">
+              <option *ngFor="let ct of possiblecategories" [value]="ct">{{ct}}</option></select>
+          </div>
+          <div><button type="submit" class="btn btn-primary" [disabled]="!i.form.valid">POST YOUR BLOG</button></div>
+      </form>
+      </div>
+    </div>
+  </div>
